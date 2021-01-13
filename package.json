@@ -1,12 +1,19 @@
 {
  "name": "nuxtjs_todo",
  "scripts": {
-  "dev": "nuxt",
-  "build": "nuxt build",
-  "generate": "nuxt generate",
-  "start": "nuxt start"
+  "dev": "nuxt-ts",
+  "build": "nuxt-ts build",
+  "generate": "nuxt-ts generate",
+  "start": "nuxt-ts start",
+  "lint": "eslint --ext .ts,.js,.vue ."
  },
  "dependencies": {
+  "@nuxt/typescript-runtime": "^2.0.0",
   "nuxt": "^2.14.12"
+ },
+ "devDependencies": {
+  "@nuxt/types": "^2.14.12",
+  "@nuxt/typescript-build": "^2.0.3",
+  "@nuxtjs/eslint-config-typescript": "^5.0.0"
  }
 }
