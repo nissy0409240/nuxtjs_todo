@@ -1,14 +1,14 @@
 <template>
   <section class="container">
     <h1>Todo App</h1>
-    <p><input type="text" name="content" v-model="content"  @focus="set_flg"/></p>
+    <p><input type="text" name="content" v-model="content" @focus="set_flg"/></p>
     <div>
       <button @click="insert">save</button>
       <button @click="find">find</button>
     </div>
     <ul>
       <li v-for="(todo, index) in display_todos" :key="index">
-        <span>{{ todo.content }}</span><span>({{ todo.created }})</span><span @click="remove(todo)">×</span>
+        <span>{{ todo.content }}</span><span>({{ todo.created }})</span><span @click="remove(todo)">×</span><span @click="update(todo)"> u</span>
       </li>
     </ul>
   </section>
@@ -57,6 +57,9 @@ export default {
     },
     remove: function(todo) {
       this.$store.commit('remove', todo)
+    },
+    update: function(todo) {
+      this.$store.commit('update', todo)
     }
   }
 }
